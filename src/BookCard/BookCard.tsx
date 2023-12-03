@@ -3,7 +3,6 @@ import { bookCreatedAt } from '../bookCreatedAt';
 import './bookCard.css'
 import axios from 'axios'
 
-
 type Book = {
   id: number,
   name: string,
@@ -14,11 +13,11 @@ type Book = {
 }
 
 
-const Card = () => {
+const Card = (props) => {
   const [bookData, setBookData] = useState<Book[]>([]);
 
   useEffect(() => {
-    getBooks()    
+    getBooks()
   }, [])
 
   const getBooks = () => {
@@ -37,10 +36,10 @@ const Card = () => {
     })
   }
 
-  const handleEditButton = (bookId:number) => {
+  const handleEditButton = (bookId: number) => {
     axios.get(`http://localhost:3000/books/${bookId}`).then((response) => {
-      console.log(response.data);
-    }) 
+      props.handleEdit(response.data)
+    })
   }
 
   return (
