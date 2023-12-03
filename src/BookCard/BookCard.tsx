@@ -2,18 +2,10 @@ import { useEffect, useState } from 'react';
 import { bookCreatedAt } from '../bookCreatedAt';
 import './bookCard.css'
 import axios from 'axios'
-
-type Book = {
-  id: number,
-  name: string,
-  author: string,
-  genre: string,
-  year: number,
-  createdAt: string
-}
+import { Book } from '../types'
 
 
-const Card = (props) => {
+const Card = (props: { handleEdit: (arg0: Book) => void; }) => {
   const [bookData, setBookData] = useState<Book[]>([]);
 
   useEffect(() => {

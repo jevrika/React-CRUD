@@ -1,13 +1,16 @@
 import { useEffect, useState } from 'react';
 import axios from 'axios'
 import './Form.css'
-const Form = (props) => {
-  const [formData, setFormData] = useState({
+import { Book } from '../types';
+
+const Form = (props: { editMode: boolean; editData: Book; }) => {
+  const [formData, setFormData] = useState<Book>({
+    id:Number(''),
     name: '',
     author: '',
     genre: '',
     year: '',
-    createdAt: new Date(),
+    createdAt: String(new Date()),
   })
   const btnText = props.editMode ? "Update book!" : "Add book!"
 
