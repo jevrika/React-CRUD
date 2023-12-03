@@ -1,0 +1,20 @@
+{
+  "books": [
+    {
+      "name": "Shadow and Bone",
+      "author": "Leigh Bardugo",
+      "genre": "Fantasy",
+      "year": "2012",
+      "createdAt": "2023-12-02T18:40:36.491Z",
+      "id": 1
+    },
+    {
+      "name": "The Silent Patient",
+      "author": "Alex Michaelides",
+      "genre": "Romance",
+      "year": "2000",
+      "createdAt": "2023-12-03T18:40:47.445Z",
+      "id": 2
+    }
+  ]
+}
