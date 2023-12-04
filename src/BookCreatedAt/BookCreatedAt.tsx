@@ -1,6 +1,7 @@
 import { differenceInMinutes, differenceInHours, differenceInDays } from 'date-fns'
+import './BookCreatedAt.css'
 
-export const bookCreatedAt = (createdAt: string): string => {
+const BookCreatedAt = (createdAt: string): string => {
   const currentDate: Date = new Date();
 
   const resultInMinutes: number = differenceInMinutes(currentDate, Date.parse(createdAt));
@@ -30,3 +31,5 @@ export const bookCreatedAt = (createdAt: string): string => {
   }
   return 'Created at an unknown time';
 };
+
+export default BookCreatedAt

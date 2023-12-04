@@ -1,8 +1,9 @@
 import { useEffect, useState } from 'react';
-import { bookCreatedAt } from '../bookCreatedAt';
+import BookCreatedAt from '../BookCreatedAt/BookCreatedAt';
 import './bookCard.css'
 import axios from 'axios'
 import { Book } from '../types'
+import BookCardImage from '../BookCardImage/BookCardImage';
 
 
 const Card = (props: { handleEdit: (arg0: Book) => void; }) => {
@@ -18,14 +19,6 @@ const Card = (props: { handleEdit: (arg0: Book) => void; }) => {
     })
   }
 
-  const getGenreImage = (genre: string) => {
-    if (genre === "") {
-      return `/src/assets/images/unknown.png`
-    } else {
-      return `/src/assets/images/${genre.toLowerCase()}.png`
-    }
-    
-  }
   const handleDeleteBook = (bookId: number) => {
     axios.delete(`http://localhost:3000/books/${bookId}`).then(() => {
       getBooks()
@@ -46,7 +39,7 @@ const Card = (props: { handleEdit: (arg0: Book) => void; }) => {
             <div className="book"   >
 
               <div className="genre-image-wrapper">
-                <img className="genre-image" src={getGenreImage(book.genre)} alt="Genre Image" />
+                <img className="genre-image" src={BookCardImage(book.genre)} alt="Genre Image" />
               </div>
 
               <h1 className="book__heading">{book.name}</h1>
@@ -57,7 +50,7 @@ const Card = (props: { handleEdit: (arg0: Book) => void; }) => {
               <button className='js-edit__button book-edit__button' onClick={() => handleEditButton(book.id)}> Edit </button>
               <button className='js-delete__button book-delete__button' onClick={() => handleDeleteBook(book.id)}> Delete </button>
 
-              <p className="creating-date">{bookCreatedAt(book.createdAt)} </p>
+              <p className="creating-date">{BookCreatedAt(book.createdAt)} </p>
             </div>
           </div>
         ))}

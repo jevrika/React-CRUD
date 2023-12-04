@@ -15,6 +15,14 @@
       "genre": "Fantasy",
       "year": "2004",
       "createdAt": "Mon Dec 04 2023 12:28:36 GMT+0200 (Eastern European Standard Time)"
+    },
+    {
+      "id": 3,
+      "name": "Atomic Habits",
+      "author": "James Clear",
+      "genre": "Psychology",
+      "year": "2015",
+      "createdAt": "Mon Dec 04 2023 17:04:32 GMT+0200 (Eastern European Standard Time)"
     }
   ]
 }

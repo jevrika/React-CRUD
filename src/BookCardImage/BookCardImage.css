@@ -1,0 +1,9 @@
+.genre-image-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+ }
+ 
+ .genre-image{
+  width: 100px;
+ }
