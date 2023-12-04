@@ -10,7 +10,7 @@ function App() {
 
   // atbildīgs par editMode datiem (editmode režīmā)
   const [editFormData, setEditFormData] = useState<Book>({
-    id: Number(''),
+    id: 0,
     name: '',
     author: '',
     genre: '',
@@ -28,8 +28,9 @@ function App() {
   return (
     <div className="App">
       {/* Padod formai datus */}
-      <Form editData={editFormData} editMode={editMode} />
+      <Form formData={editFormData} editMode={editMode} />
       <div className="cards-content">
+        {/* Paņem grāmatus datus uz kuras tika uzspiests edit */}
         <BookCard handleEdit={handleEdit} />
       </div>
     </div>

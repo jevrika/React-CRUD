@@ -5,24 +5,16 @@
       "name": "The Silent Patient",
       "author": "Alex Michaelides",
       "genre": "Mystery",
-      "year": "2019",
-      "createdAt": "Mon Dec 02 2023 09:37:36 GMT+0200 (Eastern European Standard Time)"
+      "year": "2016",
+      "createdAt": "Mon Dec 02 2023 12:26:05 GMT+0200 (Eastern European Standard Time)"
     },
     {
       "id": 2,
-      "name": "The Silent Patient",
+      "name": "Shadow and Bone",
       "author": "Leigh Bardugo",
       "genre": "Fantasy",
-      "year": "2012",
-      "createdAt": "Mon Dec 03 2023 09:38:13 GMT+0200 (Eastern European Standard Time)"
-    },
-    {
-      "id": 3,
-      "name": "Verity",
-      "author": "Colleen Hoover",
-      "genre": "Romance",
-      "year": "2000",
-      "createdAt": "Mon Dec 04 2023 11:22:37 GMT+0200 (Eastern European Standard Time)"
+      "year": "2004",
+      "createdAt": "Mon Dec 04 2023 12:28:36 GMT+0200 (Eastern European Standard Time)"
     }
   ]
 }
