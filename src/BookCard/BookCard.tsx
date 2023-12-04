@@ -19,8 +19,12 @@ const Card = (props: { handleEdit: (arg0: Book) => void; }) => {
   }
 
   const getGenreImage = (genre: string) => {
-    return `/src/assets/images/${genre.toLowerCase()}.png`
-
+    if (genre === "") {
+      return `/src/assets/images/unknown.png`
+    } else {
+      return `/src/assets/images/${genre.toLowerCase()}.png`
+    }
+    
   }
   const handleDeleteBook = (bookId: number) => {
     axios.delete(`http://localhost:3000/books/${bookId}`).then(() => {

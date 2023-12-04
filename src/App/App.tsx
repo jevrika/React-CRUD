@@ -7,17 +7,18 @@ import { Book } from '../types'
 function App() {
   // atbildīgs par editmode
   const [editMode, setEditMode] = useState(false);
-  // atbildīgs par editMode datiem
+
+  // atbildīgs par editMode datiem (editmode režīmā)
   const [editFormData, setEditFormData] = useState<Book>({
-    id:Number(''),
+    id: Number(''),
     name: '',
     author: '',
     genre: '',
     year: '',
     createdAt: String(new Date()),
   });
-  // funkcija, ko izmantos iekš bookCard, lai iestatītu editmode formai
-  // tipu piedāvāja vscode :)
+
+  // funkcija, ko izmantos iekš bookCard, lai iestatītu editmode formai true un atbilstošos datus, kad tiek nospiesta Edit poga BookCard komponentē
   const handleEdit = (bookData: Book) => {
     setEditFormData(bookData);
     setEditMode(true);
@@ -25,8 +26,8 @@ function App() {
 
 
   return (
-
     <div className="App">
+      {/* Padod formai datus */}
       <Form editData={editFormData} editMode={editMode} />
       <div className="cards-content">
         <BookCard handleEdit={handleEdit} />

@@ -1,20 +1,28 @@
 {
   "books": [
     {
-      "name": "Shadow and Bone",
+      "id": 1,
+      "name": "The Silent Patient",
+      "author": "Alex Michaelides",
+      "genre": "Mystery",
+      "year": "2019",
+      "createdAt": "Mon Dec 02 2023 09:37:36 GMT+0200 (Eastern European Standard Time)"
+    },
+    {
+      "id": 2,
+      "name": "The Silent Patient",
       "author": "Leigh Bardugo",
       "genre": "Fantasy",
       "year": "2012",
-      "createdAt": "2023-12-02T18:40:36.491Z",
-      "id": 1
+      "createdAt": "Mon Dec 03 2023 09:38:13 GMT+0200 (Eastern European Standard Time)"
     },
     {
-      "name": "The Silent Patient",
-      "author": "Alex Michaelides",
+      "id": 3,
+      "name": "Verity",
+      "author": "Colleen Hoover",
       "genre": "Romance",
       "year": "2000",
-      "createdAt": "2023-12-03T18:40:47.445Z",
-      "id": 2
+      "createdAt": "Mon Dec 04 2023 11:22:37 GMT+0200 (Eastern European Standard Time)"
     }
   ]
 }
