@@ -12,7 +12,7 @@
   gap:15px;
  }
 
- .book__heading {
+ .bookHeading {
   margin:0;
   padding:0;
   height: 100%;
@@ -22,19 +22,19 @@
   align-items: center;
  }
 
- .book-author__heading{
+ .authorHeading{
   font-weight:400;
  }
 
- .book-genres__heading{
+ .genreHeading{
   font-weight: 400;
  }
 
- .book-year__heading{
+ .yearHeading{
   font-weight: 300;
  }
 
- .book-edit__button {
+ .editButton {
   width: 100%;
   background-color: #adeaf7;
   border:none;
@@ -49,7 +49,7 @@
   }
 
  }
- .book-delete__button{
+ .deleteButton{
   width: 100%;
   background-color: #f7adad;
   border:none;
@@ -65,25 +65,12 @@
   }
 
  }
- 
- @media only screen and (min-width: 601px) {
-  .cards-content {
-    display: grid;
-    grid-template-columns: repeat(2, 300px);
-    gap:20px;
-    justify-content: center;
-    padding-top:25px;
-   }
-  }
 
-  @media only screen and (max-width: 600px) {
-    .cards-content {
-      display: grid;
-      grid-template-columns: 300px;
-      flex-direction: row;
-      gap:20px;
-      justify-content: center;
-      padding-top:25px;
-     }
-
-  }
+ .creatingDate{
+  font-style: italic;
+  font-size: 12px;
+  padding:0;
+  margin:0;
+  display: flex;
+  justify-content: center;
+ }

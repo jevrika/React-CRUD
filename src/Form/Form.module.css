@@ -1,8 +1,8 @@
-.form-wrapper {
+.wrapper {
   padding: 35px 0;
 }
 
-.book-form__form {
+.bookForm {
   display: grid;
   grid-template-columns: 650px;
   flex-direction: column;
@@ -10,12 +10,12 @@
   gap: 25px;
 }
 
-.book-form__heading{
+.formHeading{
   font-size: 26px;
   font-weight: 300;
  }
 
-.book-form__input{
+.formInput{
   border-radius: 25px;
   font-size: 16px;
   border:none;
@@ -36,7 +36,7 @@
   }
  }
 
- .book-genre-select {
+ .genreSelect {
   color:rgb(162, 157, 157);
   border:none;
   border-radius: 25px;
@@ -51,7 +51,7 @@
 
  }
 
- .book-form__button {
+ .formAddButton {
   width: 100%;
   background-color: #bdf1bd;
   border: none;
@@ -67,7 +67,8 @@
 
  }
 
- .js-edit__button {
+ .formEditButton {
+  width: 100%;
   background-color: #adeaf7;
   border:none;
   border-radius: 25px;
@@ -84,7 +85,7 @@
 
 
  @media only screen and (min-width: 601px) {
-   .book-form__form{
+   .bookForm{
     display: grid;
     grid-template-columns: 620px;
     flex-direction: column;
@@ -96,7 +97,7 @@
 
  @media only screen and (max-width: 600px) {
 
-   .book-form__form{
+   .bookForm{
     display: grid;
     grid-template-columns: 300px;
     flex-direction: column;

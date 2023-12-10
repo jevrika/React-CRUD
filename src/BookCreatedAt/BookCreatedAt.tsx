@@ -1,5 +1,4 @@
 import { differenceInMinutes, differenceInHours, differenceInDays } from 'date-fns'
-import './BookCreatedAt.css'
 
 const BookCreatedAt = (createdAt: string): string => {
   const currentDate: Date = new Date();
@@ -9,7 +8,7 @@ const BookCreatedAt = (createdAt: string): string => {
   const resultInDays: number = differenceInDays(currentDate, Date.parse(createdAt));
 
   if (resultInDays === 1 || resultInHours === 24) {
-    return `Created ${resultInDays} day ago `;
+    return `Created ${resultInDays} day ago`;
   }
   if (resultInDays > 1 || resultInHours > 24) {
     return `Created ${resultInDays} days ago `;
@@ -31,5 +30,4 @@ const BookCreatedAt = (createdAt: string): string => {
   }
   return 'Created at an unknown time';
 };
-
 export default BookCreatedAt

@@ -1,10 +1,19 @@
-import './BookCardImage.css'
+import styles from './BookCardImage.module.css'
 
-const BookCardImage = (genre: string) => {
+const BookCardImage = ({ genre }: { genre: string }) => {
   if (genre === "") {
-    return `/src/assets/images/unknown.png`
+    return (
+      <>
+        <img className={styles.genreImage} src={`/src/assets/images/unknown.png`} alt="Genre Image" />
+      </>
+    );
   } else {
-    return `/src/assets/images/${genre.toLowerCase()}.png`
+    return (
+      <>
+        <img className={styles.genreImage} src={`/src/assets/images/${genre.toLowerCase()}.png`} alt="Genre Image" />
+      </>
+    );
   }
-}
+};
+
 export default BookCardImage

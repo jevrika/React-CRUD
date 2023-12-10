@@ -1,10 +1,10 @@
-import './App.css'
+import styles from './App.module.css'
 import Form from '../Form/Form';
 import BookCard from '../BookCard/BookCard'
 import { useState } from 'react';
 import { Book } from '../types'
 
-function App() {
+const App = () => {
   // atbildīgs par editmode
   const [editMode, setEditMode] = useState(false);
 
@@ -26,10 +26,10 @@ function App() {
 
 
   return (
-    <div className="App">
+    <div className={styles.wrapper}>
       {/* Padod formai datus */}
       <Form formData={editFormData} editMode={editMode} />
-      <div className="cards-content">
+      <div className={styles.cardsContent}>
         {/* Paņem grāmatus datus uz kuras tika uzspiests edit */}
         <BookCard handleEdit={handleEdit} />
       </div>

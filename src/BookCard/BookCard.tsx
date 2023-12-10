@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import BookCreatedAt from '../BookCreatedAt/BookCreatedAt';
-import './bookCard.css'
+import styles from './BookCard.module.css'
 import axios from 'axios'
 import { Book } from '../types'
 import BookCardImage from '../BookCardImage/BookCardImage';
@@ -35,22 +35,22 @@ const Card = (props: { handleEdit: (arg0: Book) => void; }) => {
     <>
       {
         bookData && bookData.map((book) => (
-          <div key={book.id} className="js-book-wrapper book-wrapper">
-            <div className="book"   >
+          <div key={book.id} className={styles.wrapper}>
+            <div className={styles.book}>
 
-              <div className="genre-image-wrapper">
-                <img className="genre-image" src={BookCardImage(book.genre)} alt="Genre Image" />
+              <div className={styles.genreImageWrapper}>
+                <BookCardImage genre={book.genre}/>
               </div>
 
-              <h1 className="book__heading">{book.name}</h1>
-              <h2 className="book-author__heading"> {book.author}</h2>
-              <h3 className="book-genres__heading">{book.genre}  </h3>
-              <h4 className="book-year__heading">The year of publishing : {book.year}</h4>
+              <h1 className={styles.bookHeading}>{book.name}</h1>
+              <h2 className={styles.authorHeading}> {book.author}</h2>
+              <h3 className={styles.genreHeading}>{book.genre}  </h3>
+              <h4 className={styles.yearHeading}>The year of publishing : {book.year}</h4>
 
-              <button className='js-edit__button book-edit__button' onClick={() => handleEditButton(book.id)}> Edit </button>
-              <button className='js-delete__button book-delete__button' onClick={() => handleDeleteBook(book.id)}> Delete </button>
+              <button className={styles.editButton}onClick={() => handleEditButton(book.id)}> Edit </button>
+              <button className={styles.deleteButton} onClick={() => handleDeleteBook(book.id)}> Delete </button>
 
-              <p className="creating-date">{BookCreatedAt(book.createdAt)} </p>
+              <p className={styles.creatingDate}>{BookCreatedAt(book.createdAt)} </p>
             </div>
           </div>
         ))}
