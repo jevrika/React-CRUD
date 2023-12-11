@@ -28,7 +28,7 @@ const App = () => {
   return (
     <div className={styles.wrapper}>
       {/* Padod formai datus */}
-      <Form formData={editFormData} editMode={editMode} />
+      <Form editFormData={editFormData} editMode={editMode} />
       <div className={styles.cardsContent}>
         {/* Paņem grāmatus datus uz kuras tika uzspiests edit */}
         <BookCard handleEdit={handleEdit} />

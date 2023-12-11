@@ -3,23 +3,28 @@ import axios from 'axios'
 import styles from './Form.module.css'
 import { Book } from '../types';
 
-const Form = (props: { editMode: boolean; formData: Book; }) => {
-  const [formData, setFormData] = useState<Book>({ ...props.formData })
+type FormProps = {
+  editMode: boolean;
+  editFormData: Book;
+}
+
+const Form = ({ editMode, editFormData }: FormProps)  => {
+  const [formData, setFormData] = useState<Book>({ ...editFormData })
 
   // Samaina formā pogas nosaukumu un klasi atkarībā no editMode vērtības
-  const formButtonText = props.editMode ? "Update book!" : "Add book!"
-  const formButtonClassName = props.editMode ? `${styles.formEditButton}` : `${styles.formAddButton}`;
+  const formButtonText = editMode ? "Update book!" : "Add book!"
+  const formButtonClassName = editMode ? `${styles.formEditButton}` : `${styles.formAddButton}`;
 
   // Nostrādā, kad props.formData mainās
   useEffect(() => {
     setFormData({
-      ...props.formData,
+      ...editFormData,
     });
-  }, [props.formData]);
+  }, [editFormData]);
 
   const handleFormSubmit = () => {
-    if (props.editMode) {
-      axios.put(`http://localhost:3000/books/${props.formData.id}`, formData)
+    if (editMode) {
+      axios.put(`http://localhost:3000/books/${editFormData.id}`, formData)
     } else {
       axios.post('http://localhost:3000/book', formData)
     }

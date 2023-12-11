@@ -5,8 +5,11 @@ import axios from 'axios'
 import { Book } from '../types'
 import BookCardImage from '../BookCardImage/BookCardImage';
 
+type CardProps = {
+  handleEdit: (arg:Book) => void;
+}
 
-const Card = (props: { handleEdit: (arg0: Book) => void; }) => {
+const Card = ({handleEdit }:CardProps) => {
   const [bookData, setBookData] = useState<Book[]>([]);
 
   useEffect(() => {
@@ -27,7 +30,7 @@ const Card = (props: { handleEdit: (arg0: Book) => void; }) => {
 
   const handleEditButton = (bookId: number) => {
     axios.get(`http://localhost:3000/books/${bookId}`).then((response) => {
-      props.handleEdit(response.data)
+      handleEdit(response.data)
     })
   }
 
