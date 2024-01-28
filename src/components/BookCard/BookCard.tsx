@@ -2,14 +2,14 @@ import { useEffect, useState } from 'react';
 import BookCreatedAt from '../BookCreatedAt/BookCreatedAt';
 import styles from './BookCard.module.css'
 import axios from 'axios'
-import { Book } from '../types'
+import { Book } from '../../types'
 import BookCardImage from '../BookCardImage/BookCardImage';
 
 type CardProps = {
-  handleEdit: (arg:Book) => void;
+  handleEdit: (arg: Book) => void;
 }
 
-const Card = ({handleEdit }:CardProps) => {
+const Card = ({ handleEdit }: CardProps) => {
   const [bookData, setBookData] = useState<Book[]>([]);
 
   useEffect(() => {
@@ -42,7 +42,7 @@ const Card = ({handleEdit }:CardProps) => {
             <div className={styles.book}>
 
               <div className={styles.genreImageWrapper}>
-                <BookCardImage genre={book.genre}/>
+                <BookCardImage genre={book.genre} />
               </div>
 
               <h1 className={styles.bookHeading}>{book.name}</h1>
@@ -50,7 +50,7 @@ const Card = ({handleEdit }:CardProps) => {
               <h3 className={styles.genreHeading}>{book.genre}  </h3>
               <h4 className={styles.yearHeading}>The year of publishing : {book.year}</h4>
 
-              <button className={styles.editButton}onClick={() => handleEditButton(book.id)}> Edit </button>
+              <button className={styles.editButton} onClick={() => handleEditButton(book.id)}> Edit </button>
               <button className={styles.deleteButton} onClick={() => handleDeleteBook(book.id)}> Delete </button>
 
               <p className={styles.creatingDate}>{BookCreatedAt(book.createdAt)} </p>

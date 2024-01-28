@@ -1,21 +1,19 @@
 import { useEffect, useState } from 'react';
 import axios from 'axios'
 import styles from './Form.module.css'
-import { Book } from '../types';
+import { Book } from '../../types';
 
 type FormProps = {
   editMode: boolean;
   editFormData: Book;
 }
 
-const Form = ({ editMode, editFormData }: FormProps)  => {
+const Form = ({ editMode, editFormData }: FormProps) => {
   const [formData, setFormData] = useState<Book>({ ...editFormData })
 
-  // Samaina formā pogas nosaukumu un klasi atkarībā no editMode vērtības
   const formButtonText = editMode ? "Update book!" : "Add book!"
   const formButtonClassName = editMode ? `${styles.formEditButton}` : `${styles.formAddButton}`;
 
-  // Nostrādā, kad props.formData mainās
   useEffect(() => {
     setFormData({
       ...editFormData,
@@ -26,12 +24,12 @@ const Form = ({ editMode, editFormData }: FormProps)  => {
     if (editMode) {
       axios.put(`http://localhost:3000/books/${editFormData.id}`, formData)
     } else {
-      axios.post('http://localhost:3000/book', formData)
+      axios.post('http://localhost:3000/books', formData)
     }
   }
 
   return (
-    <div className={styles.wprapper}>
+    <div className={styles.wrapper}>
       <form className={styles.bookForm} >
         <h1 className={styles.formHeading}>Add new book!</h1>
         <input type="text" className={styles.formInput} name="book-name" placeholder="add book" value={formData.name} onChange={(e) => setFormData({ ...formData, name: e.target.value })} required />
